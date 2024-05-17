@@ -8,120 +8,209 @@
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png"
         type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <title>Surf-TG: <!-- Filename --> </title>
+    <title><!-- Filename --></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/css/plyr.css">
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-    <link rel="stylesheet" href="https://bootswatch.com/5/<!-- Theme -->/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
     <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
         body {
-            height: 100vh;
             margin: 0;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-
+            background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            font-family: 'Merriweather', serif;
+            position: relative;
+            min-height: 90vh; /* Ensures the body takes at least the full viewport height */
         }
-
+        
+        body::before {
+            content: '';
+            position: fixed; /* Change to fixed to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.638); /* Adjust the opacity as needed */
+            z-index: 1;
+        }
+        
         .container {
-            margin: auto;
-            padding: 0px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 10px;
+            position: relative;
+            z-index: 2;
+            padding: 20px; /* Add padding as needed */
+            width: 100%;
+            text-align: center;
         }
-
-        a {
-            text-decoration: none;
-        }
-
-        .card {
-            align-items: left;
-            box-shadow: none;
-            border-radius: 0%;
-            max-width: 48%
+        
+        body * {
+            position: relative;
+            z-index: 2;
         }
 
         .video-player {
-            max-width: 48%;
-            margin: auto;
-            padding-bottom: 10px;
+            width: 90%;
+            max-width: 800px auto;
+            margin: 20px auto;
+            background-color: rgb(255,11,11);
+            padding: 2px;
+            border-radius: 0px;
+            box-shadow: 0 0 50px rgba(236,13,13,0.753); /* Add green shadow */
         }
 
-        .plyr {
+        .video-info {
+            margin: 0px auto;
+            text-align: left;
+            background-color: rgba(12,10,10,0);
+            padding: 10px;
+            padding-top: 20px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 1px;
             border-radius: 5px;
+            border: 2px solid rgb(255,23,23);
+            width: 90%; /* Adjust the width as needed */
+            max-width: 90px auto; /* Ensure it doesn't get too wide */
+        }
+        
+        .video-info p {
+            white-space: pre-wrap;
+            word-wrap: break-word; /* This will allow long words to wrap */
+            overflow-wrap: break-word; /* For non-webkit browsers */
+            word-break: break-all; /* For non-webkit browsers */
+            hyphens: auto; /* This enables hyphenation */
         }
 
-        ::-webkit-scrollbar {
-            width: 5px;
+        .video-info h6 span {
+            color: white;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #888;
+        .video-info h6 span::after {
+            content: '\A';
+            white-space: pre;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .button-container .btn {
+            flex: 1 1 calc(33.333% - 10px);
+            max-width: 200px;
+            text-align: left;
+            background-color: #ffffff34;
+            border: none;
+            border: 2px solid rgba(240,235,48,0.626);
+            box-shadow: 0 0 10px rgba(240,235,48,0.626); /* Add green shadow */
+        }
+
+        .button-container .btn:hover {
+            background-color: #3dff00af;
         }
 
         @media (max-width: 992px) {
-
-            .video-player {
-                max-width: 80%;
-                margin: auto;
-            }
-
-            .card {
-                align-items: left;
-                box-shadow: none;
-                border-radius: 0%;
-                max-width: 80%
-            }
-
-            .navbar {
-                padding-right: 15px;
-                padding-left: 15px;
+            .button-container .btn {
+                flex: 1 1 calc(50% - 10px);
             }
         }
+
+        @media (max-width: 600px) {
+            .button-container .btn {
+                flex: 1 1 100%;
+            }
+        }
+        
+        .material-symbols-outlined {
+            vertical-align: middle;
+            font-size: 20px; /* Adjust the size as needed */
+            color: #1e9644; /* Color for the icon */
+        }
+
+        nav.navbar {
+            background-color: rgba(0,0,0,0.569);
+            width: 100%;
+            box-shadow: 0 0 15px rgba(148,142,142,0.82); /* Add green shadow */
+            background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+        
+        .btn img {
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary mb-3 p-1" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-blur mb-3 p-1" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/logo%20(2).png" alt="Logo"
+                <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tg2.png" alt="Logo"
                     height="40">
             </a>
-            <div class="d-flex">
-                <form id="signoutForm" action="/logout" method="post" class="d-flex" role="logout">
-                    <button type="submit" class="btn btn-secondary btn-sm"><i class="bi bi-box-arrow-left"></i>
-                        Logout</button>
-                </form>
-            </div>
-
         </div>
     </nav>
+
     <div class="video-player">
-        <video controls crossorigin playsinline data-poster="<!-- Poster -->" id="player">
+        <video controls crossorigin playsinline data-poster="path/to/poster.jpg" id="player">
             <source src="#" type="video/mp4" />
         </video>
     </div>
-    <div class="card bg-light mb-3" style="margin: auto; border-radius: 5px;">
-        <div class="card-body">
-            <h6 class="card-title">Name: <!-- Filename --></h6>
-            <p class="card-text">Size: <!-- Size --></p>
-        </div>
+
+    <div class="video-info">
+        <p><span class="material-symbols-outlined">videocam</span> <h style="color: blue;">Name: <span style="color: white;">TG: [@Movie Matin]Spider-Man (2002) 1080p UHD BluR.mkv</span></p>
+        <p><span class="material-symbols-outlined">flash_on</span> <h style="color: blue;">Size: <span style="color: white;"> 3.46GB</span></p>
     </div>
-    <div class="container d-flex justify-content-center align-items-center" style="width: 100%; padding: 0 5px;">
-        <div onclick="mx_player()" class="btn btn-primary">MX Player</div>
-        <div onclick="vlc_player()" class="btn btn-primary">VLC Mobile</div>
-        <div onclick="km_player()" class="btn btn-primary">KM Player</div>
-        <div onclick="get_file()" class="btn btn-primary">Get File</div>
-        <div onclick="copyUrl()" class="btn btn-primary">Copy Url</div>
-        <div onclick="download()" class="btn btn-primary">Download</div>
+
+
+    <div class="button-container">
+        <button onclick="mx_pro_player()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/mxpro.png" alt="Icon">
+            MX PRO PLAYER
+        </button>
+        <button onclick="vlc_player()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/vlcb.png" alt="Icon">
+            VLC PLAYER
+        </button>
+        <button onclick="mx_player()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/mxred.png" alt="Icon">
+            MX PLAYER
+        </button>
+        <button onclick="km_player()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/kmp.png" alt="Icon">
+            KMP PLAYER
+        </button>
+        <button onclick="get_file()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/fyelo.png" alt="Icon">
+            Get File In Bot
+        </button>
+        <button onclick="copyUrl()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/copy.png" alt="Icon">
+            Copy Url
+        </button>
+        <button onclick="download()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/dowgreen.png" alt="Icon">
+            DOWNLOAD
+        </button>
     </div>
+
     <footer class="footer mt-auto py-3 text-muted text-center" style="color: white;">
         <div class="container d-flex justify-content-center align-items-center" style="width: 100%; padding: 0 10px;">
             <p class="float-end">
@@ -129,78 +218,93 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg> by <a href="https://github.com/weebzone" target="_blank">Karan Adhikari</a><br>
-                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG</a>. All Rights
+                </svg> by <a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
+                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
                 Reserved.
         </div>
     </footer>
-</body>
-<script>
-    const videolink = window.location.href;
-    const url = new URL(videolink);
-    const domainUrl = url.origin;
-    const videoIdWithParams = videolink.split('/').pop();
-    const videoId = videoIdWithParams.split('?')[0];
-    const idParam = new URLSearchParams(window.location.search).get('id');
-    const hashParam = new URLSearchParams(window.location.search).get('hash');
-    const encodedName = encodeURIComponent('<!-- Filename -->');
 
-    const downloadlink = `${domainUrl}/${videoId}/${encodedName}?id=${idParam}&hash=${hashParam}`;
+    <script>
+        const videolink = window.location.href;
+        const url = new URL(videolink);
+        const domainUrl = url.origin;
+        const videoIdWithParams = videolink.split('/').pop();
+        const videoId = videoIdWithParams.split('?')[0];
+        const idParam = new URLSearchParams(window.location.search).get('id');
+        const hashParam = new URLSearchParams(window.location.search).get('hash');
+        const encodedName = encodeURIComponent('TG: [@Movie Matin]Spider-Man (2002) 1080p UHD BluR.mkv');
 
-    const player = new Plyr('#player', {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'pip', 'airplay', 'settings', "play-large", 'duration'],
-        hideControls: false,
-        keyboard: { focused: true, global: true },
-        loop: { active: false },
-    });
-    function mx_player() {
-        const openDownloadLink = downloadlink;
-        const openMx = `intent:${openDownloadLink}#Intent;package=com.mxtech.videoplayer.ad;end`;
-        window.location.href = openMx;
-    }
+        const downloadlink = `${domainUrl}/${videoId}/${encodedName}?id=${idParam}&hash=${hashParam}`;
+        const downloadlink1 = `${domainUrl}/watch/${videoId}?id=${idParam}&hash=${hashParam}`;
 
-    function vlc_player() {
-        const openDownloadLink = downloadlink;
-        const openVlc = `vlc://${openDownloadLink}`;
-        window.location.href = openVlc;
-    }
-    function km_player() {
-        const openDownloadLink = downloadlink;
-        const openKmplayer = `intent:${openDownloadLink}#Intent;package=com.kmplayer;end`;
-        window.location.href = openKmplayer;
-    }
-    function download() {
-        const openDownloadLink = downloadlink;
-        window.location.href = openDownloadLink;
-    }
-    function get_file() {
-        const regex = /(\d+)\?id=(\d+)&/;
-        const match = videolink.match(regex);
-        if (match) {
-            const chatId = "-100" + match[1];
-            const messageId = match[2];
-            const openTG = `https://t.me/<!-- Username -->?start=file_${messageId}${chatId}`;
-            window.location.href = openTG;
+        const player = new Plyr('#player', {
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'pip', 'airplay', 'settings', "play-large", 'download', 'duration'],
+            hideControls: false,
+            keyboard: { focused: true, global: true },
+            loop: { active: false },
+        });
+        
+        function mx_pro_player() {
+            const openDownloadLink = downloadlink;
+            const openMxPro = `intent:${openDownloadLink}#Intent;package=com.mxtech.videoplayer.pro;end`;
+            window.location.href = openMxPro;
         }
-    }
-    function copyUrl() {
-        const url = downloadlink;
-        navigator.clipboard.writeText(url)
-            .then(() => {
-                alert('URL copied to clipboard!');
-            })
-            .catch((error) => {
-                console.error('Failed to copy URL: ', error);
-            });
-    }
-    function updateVideoSource() {
-        const videoElement = document.getElementById('player');
-        const newSrc = downloadlink;
-        videoElement.src = newSrc;
-    }
-    window.onload = function () {
-        updateVideoSource();
-    };
-</script>
+
+        function mx_player() {
+            const openDownloadLink = downloadlink;
+            const openMx = `intent:${openDownloadLink}#Intent;package=com.mxtech.videoplayer.ad;end`;
+            window.location.href = openMx;
+        }
+
+        function vlc_player() {
+            const openDownloadLink = downloadlink;
+            const openVlc = `vlc://${openDownloadLink}`;
+            window.location.href = openVlc;
+        }
+
+        function km_player() {
+            const openDownloadLink = downloadlink;
+            const openKmplayer = `intent:${openDownloadLink}#Intent;package=com.kmplayer;end`;
+            window.location.href = openKmplayer;
+        }
+
+        function download() {
+            const openDownloadLink = downloadlink;
+            window.location.href = openDownloadLink;
+        }
+
+        function get_file() {
+            const regex = /(\d+)\?id=(\d+)&/;
+            const match = videolink.match(regex);
+            if (match) {
+                const chatId = "-100" + match[1];
+                const messageId = match[2];
+                const openTG = `https://t.me/TGlink99_bot?start=file_${messageId}${chatId}`;
+                window.location.href = openTG;
+            }
+        }
+
+        function copyUrl() {
+            const url = downloadlink1;
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    alert('URL copied to clipboard!');
+                })
+                .catch((error) => {
+                    console.error('Failed to copy URL: ', error);
+                });
+        }
+
+        function updateVideoSource() {
+            const videoElement = document.getElementById('player');
+            const newSrc = downloadlink;
+            videoElement.src = newSrc;
+        }
+
+        window.onload = function () {
+            updateVideoSource();
+        };
+    </script>
+</body>
 
 </html>
