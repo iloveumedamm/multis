@@ -13,7 +13,7 @@ StreamBot = Client(
     plugins=plugins,
     sleep_threshold=Telegram.SLEEP_THRESHOLD,
     workers=Telegram.WORKERS,
-    max_concurrent_transmissions=1000
+    max_concurrent_transmissions=30
 )
 UserBot = Client(
     name='user',
