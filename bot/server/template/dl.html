@@ -7,100 +7,187 @@
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png" type="image/x-icon">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png"
         type="image/x-icon">
-    <title>Surf-TG: <!-- Filename --> </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/js/SurfTG.js"></script>
-    <link rel="stylesheet" href="https://bootswatch.com/5/<!-- Theme -->/bootstrap.min.css">
+    <title>Surf-TG: <!-- Filename --> </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/css/plyr.css">
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
         body {
-            height: 100vh;
             margin: 0;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-
+            background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            font-family: 'Merriweather', serif;
+            position: relative;
+            min-height: 90vh; /* Ensures the body takes at least the full viewport height */
+        }
+        
+        body::before {
+            content: '';
+            position: fixed; /* Change to fixed to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.638); /* Adjust the opacity as needed */
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            padding: 20px; /* Add padding as needed */
+            width: 100%;
+            text-align: center;
+        }
+        
+        body * {
+            position: relative;
+            z-index: 2;
         }
 
-        .container {
-            margin: auto;
-            padding: 0px;
+        .video-info {
+            margin: 0px auto;
+            text-align: left;
+            background-color: rgba(12,10,10,0);
+            padding: 10px;
+            padding-top: 20px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 1px;
+            border-radius: 5px;
+            border: 2px solid rgb(255,23,23);
+            width: 90%; /* Adjust the width as needed */
+            max-width: 90px auto; /* Ensure it doesn't get too wide */
+        }
+        
+        .video-info p {
+            white-space: pre-wrap;
+            word-wrap: break-word; /* This will allow long words to wrap */
+            overflow-wrap: break-word; /* For non-webkit browsers */
+            word-break: break-all; /* For non-webkit browsers */
+            hyphens: auto; /* This enables hyphenation */
+        }
+
+        .video-info h6 span {
+            color: white;
+        }
+
+        .video-info h6 span::after {
+            content: '\A';
+            white-space: pre;
+        }
+
+        .button-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: flex-start;
+            justify-content: center;
             gap: 10px;
+            margin: 20px 0;
+            width: auto;
         }
 
-        a {
-            text-decoration: none;
+        .button-container .btn {    
+            justify-content: center;
+            display: flex;
+            flex: 1 1 calc(33.333% - 10px);
+            max-width: 200px;
+            text-align: left;
+            background-color: #ffffff34;
+            border: none;
+            border: 2px solid rgba(240,235,48,0.626);
+            box-shadow: 0 0 10px rgba(240,235,48,0.626); /* Add green shadow */
         }
 
-        .card {
-            align-items: left;
-            box-shadow: none;
-            border-radius: 0%;
-            max-width: 48%
-        }
-
-        /* For WebKit browsers (Chrome, Safari, etc.) */
-        /* Track */
-        ::-webkit-scrollbar {
-            width: 5px;
-            /* Set the width of the scrollbar */
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            /* Color of the scrollbar handle */
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-            /* Color of the scrollbar handle on hover */
+        .button-container .btn:hover {
+            background-color: #3dff00af;
         }
 
         @media (max-width: 992px) {
-            .card {
-                align-items: left;
-                box-shadow: none;
-                border-radius: 0%;
-                max-width: 80%
-            }
-
-            .navbar {
-                padding-right: 15px;
-                padding-left: 15px;
+            .button-container .btn {
+                flex: 1 1 calc(50% - 10px);
             }
         }
+
+        @media (max-width: 600px) {
+            .button-container .btn {
+                flex: 1 1 100%;
+            }
+        }
+        
+        .material-symbols-outlined {
+            vertical-align: middle;
+            font-size: 20px; /* Adjust the size as needed */
+            color: #1e9644; /* Color for the icon */
+        }
+
+        nav.navbar {
+            background-color: rgba(0,0,0,0.569);
+            width: 100%;
+            box-shadow: 0 0 15px rgba(148,142,142,0.82); /* Add green shadow */
+            background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+        
+        .btn img {
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
+        .footer img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="margin-bottom: 1rem; padding: 10px;">
-        <div class="container">
-            <a class="navbar-brand" style="border: 0px;" href="/">
-                <img src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/logo%20(2).png" alt="Logo"
-                    height="45">
+    <nav class="navbar navbar-expand-lg bg-blur mb-3 p-1" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tg2.png" alt="Logo"
+                    height="40">
             </a>
-            <div>
-                <form id="signoutForm" action="/logout" method="post">
-                    <button type="submit" class="btn btn-primary"><i class="bi bi-box-arrow-left"></i> Logout</button>
-                </form>
-            </div>
         </div>
     </nav>
 
-    <div class="card bg-light mb-3" style="margin: auto; border-radius: 5px;">
-        <div class="card-body">
-            <h5 class="card-title">Name: <!-- Filename --></h5>
-            <p class="card-text">Size: <!-- Size --></p>
-        </div>
+    <div class="video-info">
+        <p><span class="material-symbols-outlined">videocam</span> <h style="color: blue;">Name: <span style="color: white;"><!-- Filename --></span></p>
+        <p><span class="material-symbols-outlined">flash_on</span> <h style="color: blue;">Size: <span style="color: white;"> <!-- Size --></span></p>
     </div>
 
-    <div class="container d-flex justify-content-center align-items-center" style="width: 100%; padding: 0 5px;">
-        <div onclick="copyUrl()" class="btn btn-primary">Copy Url</div>
-        <div onclick="download()" class="btn btn-primary">Download</div>
+
+    <div class="button-container">
+        <button onclick="download()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/dowgreen.png" alt="Icon">
+            DOWNLOAD
+        </button>
+        <button onclick="get_file()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tele.png" alt="Icon">
+            Get In Telegram
+        </button>
+        <button onclick="copyUrl()" class="btn btn-primary">
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/copy.png" alt="Icon">
+            Copy Url
+        </button>
     </div>
 
     <footer class="footer mt-auto py-3 text-muted text-center" style="color: white;">
@@ -110,13 +197,63 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg> by <a href="https://github.com/weebzone" target="_blank">Karan Adhikari</a><br>
-                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG</a>. All Rights
+                </svg> by<img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/%20github.png" alt="Icon"><a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
+                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
                 Reserved.
+            </p>
         </div>
     </footer>
-</body>
 
-<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <script>
+        const videolink = window.location.href;
+        const url = new URL(videolink);
+        const domainUrl = url.origin;
+        const videoIdWithParams = videolink.split('/').pop();
+        const videoId = videoIdWithParams.split('?')[0];
+        const idParam = new URLSearchParams(window.location.search).get('id');
+        const hashParam = new URLSearchParams(window.location.search).get('hash');
+        const encodedName = encodeURIComponent('<!-- Filename -->');
+
+        const downloadlink = `${domainUrl}/${videoId}/${encodedName}?id=${idParam}&hash=${hashParam}`;
+        const downloadlink1 = `${domainUrl}/watch/${videoId}?id=${idParam}&hash=${hashParam}`;
+        
+        function download() {
+            const openDownloadLink = downloadlink;
+            window.location.href = openDownloadLink;
+        }
+
+        function get_file() {
+            const regex = /(\d+)\?id=(\d+)&/;
+            const match = videolink.match(regex);
+            if (match) {
+                const chatId = "-100" + match[1];
+                const messageId = match[2];
+                const openTG = `https://t.me/<!-- Username -->?start=file_${messageId}${chatId}`;
+                window.location.href = openTG;
+            }
+        }
+
+        function copyUrl() {
+            const url = downloadlink1;
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    alert('URL copied to clipboard!');
+                })
+                .catch((error) => {
+                    console.error('Failed to copy URL: ', error);
+                });
+        }
+
+        function updateVideoSource() {
+            const videoElement = document.getElementById('player');
+            const newSrc = downloadlink;
+            videoElement.src = newSrc;
+        }
+
+        window.onload = function () {
+            updateVideoSource();
+        };
+    </script>
+</body>
 
 </html>

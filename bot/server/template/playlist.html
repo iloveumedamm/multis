@@ -17,6 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/js/SurfTG.js"></script>
     <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <style>
     a {
@@ -37,11 +38,81 @@
 
     html {
         position: relative;
-        min-height: 100%;
+        min-height: 90%;
     }
 
     body {
         margin-bottom: 60px;
+        font-family: 'Merriweather', serif;
+    }
+    
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+    }
+    
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.638); /* Adjust the opacity as needed */
+        z-index: -1;
+    }
+    
+    nav.navbar {
+        background-color: rgba(0,0,0,0.569);
+        width: 100%;
+        box-shadow: 0 0 15px rgba(148,142,142,0.82); /* Add green shadow */
+        background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+    }
+    
+.pagination .page-item .page-ink {
+        margin: 0 3px;
+        box-shadow: 0 0 20px rgba(240, 235, 48, 0.626);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: #ffffff1f; /* Blue background */
+        color: white; /* White text */
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid yellow;
+        
+    }
+
+    .pagination .page-item .page-ink:hover {
+        background-color: #3dff00af; /* Darker blue on hover */
+        color: white; /* Ensure text remains white */
+    }
+
+    .pagination .page-item .page-ink img {
+        vertical-align: middle;
+        margin-right: 1.5rem;
+    }
+
+    .pagination .page-item:first-child .page-ink img {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .pagination .page-item:last-child .page-ink img {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
     .footer {
@@ -49,6 +120,18 @@
         bottom: 0;
         width: 100%;
         height: 60px;
+    }
+    
+    .footer p {
+        color: #38de0d !important; /* Force footer text and links to be white */
+    }
+    
+    .footer img {
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     .col {
@@ -58,6 +141,31 @@
     .col:hover {
         transform: scale(1.05);
     }
+    
+    .btn img {
+        width: 28px;
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .modal-content{
+        width: 100%;
+        min-width: auto ;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-shadow: 0 0 20px rgba(240, 235, 48, 0.626);
+        background-color: #0f0f0fab; /* Blue background */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 15px;
+        text-align: left;
+        text-decoration: none;
+        border: 1px solid yellow;
+        
+    }
+    
 </style>
 
 <body>
@@ -76,8 +184,8 @@
                             placeholder="Thumbnail url"><br>
                         <input type="hidden" id="parent_dir" name="parent_dir" readonly>
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn me-2" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Logo"></button>
+                            <button type="submit" class="btn"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Logo"></button>
                         </div>
                     </form>
                 </div>
@@ -100,10 +208,10 @@
                         <input type="text" class="form-control" id="edit_filethumbnail" name="filethumbnail"
                             value=""><br>
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary  me-2"
-                                onclick="submitEditFileForm()">Submit</button>
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" onclick="deleteFileItem()">Delete</button>
+                            <button type="submit" class="btn me-2"
+                                onclick="submitEditFileForm()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Logo"></button>
+                            <button type="button" class="btn me-2" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Logo"></button>
+                            <button type="button" class="btn" onclick="deleteFileItem()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/bin.png" alt="Logo"></button>
                         </div>
                     </form>
                 </div>
@@ -123,10 +231,10 @@
                         <label for="edit_thumbnail">Thumbnail:</label>
                         <input type="text" class="form-control" id="edit_thumbnail" name="thumbnail" value=""><br>
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary  me-2"
-                                onclick="submitEditForm()">Submit</button>
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" onclick="deleteItem()">Delete</button>
+                            <button type="submit" class="btn me-2"
+                                onclick="submitEditForm()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Logo"></button>
+                            <button type="button" class="btn me-2" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Logo"></button>
+                            <button type="button" class="btn" onclick="deleteItem()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/bin.png" alt="Logo"></button>
                         </div>
                     </form>
                 </div>
@@ -137,12 +245,11 @@
     <nav class="navbar navbar-expand-lg bg-primary mb-3 p-1" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/logo%20(2).png" alt="Logo"
-                    height="40">
+                <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tg2.png" alt="Logo"
+                    height="30">
             </a>
             <form id="signoutForm" action="/logout" method="post" class="d-flex" role="logout">
-                <button type="submit" class="btn btn-secondary btn-sm"><i class="bi bi-box-arrow-left"></i>
-                    Logout</button>
+                <button type="submit" class="btn"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/logout.png"></img></button>
             </form>
         </div>
     </nav>
@@ -151,15 +258,15 @@
         <div class="card mx-auto text-center">
             <div class="card-header"><!-- Title --></div>
         </div>
-        <button type="button" class="admin-only btn btn-secondary btn-sm" data-bs-toggle="modal"
-            data-bs-target="#createFolderModal" onclick="createPopupForm(event)">Create Folder</button>
+        <button type="button" class="admin-only btn btn-sm" data-bs-toggle="modal"
+            data-bs-target="#createFolderModal" onclick="createPopupForm(event)"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/create.png" alt="Logo"></button>
     </div>
 
     <div class="container">
         <form class="d-flex" style="margin: auto; padding-top: 10px; padding-bottom: 20px;"
             action="/search/db/<!-- Parent_id -->" method="get">
             <input class="form-control me-sm-2" type="search" placeholder="Search" name="q">
-            <button class="btn btn-secondary my-sm-0" type="submit">Search</button>
+            <button class="btn btn-secondary my-sm-0" type="submit"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/loupe.png" alt="Logo"></button>
         </form>
     </div>
 
@@ -177,14 +284,18 @@
     </div>
     <div class="container d-flex align-items-center justify-content-center">
         <div>
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" id="prevButton" href="#">Previous</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" id="nextButton" href="#">Next</a>
-                </li>
-            </ul>
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-ink" id="prevButton" href="#">
+                    <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/left.png" alt="Previous" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 15px;">
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-ink" id="nextButton" href="#" >
+                    <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/right.png" alt="Next" style="width: 30px; height: 30px; vertical-align: middle; margin-left: 15px;">
+                </a>
+            </li>
+        </ul>
         </div>
     </div>
     <footer class="footer mt-auto py-3 text-muted text-center" style="color: white;">
@@ -194,9 +305,10 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg> by <a href="https://github.com/weebzone" target="_blank">Karan Adhikari</a><br>
-                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG</a>. All Rights
+                </svg> by<img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/%20github.png" alt="Icon"><a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
+                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
                 Reserved.
+            </p>
         </div>
     </footer>
 </body>

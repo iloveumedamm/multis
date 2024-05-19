@@ -1,5 +1,8 @@
-<html lang="en" class="hydrated"><head>
-    <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Surf-TG: Login</title>
@@ -121,6 +124,14 @@
         footer p {
             color: #ffffff !important; /* Force footer text and links to be white */
         }
+
+        .footer img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
     </style>
 </head>
 
@@ -130,21 +141,21 @@
         <img src="https://raw.githubusercontent.com/tharindu899/addon/main/5tt.jpg" alt="Logo" class="logo">
     </div>
     <div class="container">
-        <div class="alert alert-dismissible alert-danger error-popup" id="errorPopup" style="display: none;">
-            <strong>Oh snap! </strong>
+        <div class="alert alert-dismissible alert-danger error-popup" id="errorPopup">
+            <strong>Oh snap! <!-- Error --></strong>
         </div>
         <form id="signinForm" action="/login" method="post">
             <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
             <fieldset>
                 <div class="inputBox d-flex align-items-center">
                     <span class="icon">
-                        <ion-icon name="person" role="img" class="md hydrated" aria-label="person"></ion-icon>
+                        <ion-icon name="person"></ion-icon>
                     </span>
                     <input type="text" class="form-control" id="exampleInputUsername" name="username" placeholder="Enter username" style="margin-bottom: 1rem; padding: 15px;">
                 </div>
                 <div class="inputBox d-flex align-items-center">
                     <span class="icon">
-                        <ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon>
+                        <ion-icon name="lock-closed"></ion-icon>
                     </span>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" autocomplete="off" style="margin-bottom: 1rem; padding: 15px;">
                 </div>
@@ -155,19 +166,21 @@
         </form>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <footer class="footer mt-auto py-3 text-muted text-center" style="color: white;">
         <div class="container d-flex justify-content-center align-items-center" style="width: 100%; padding: 0 10px;">
             <p class="float-end">
-                </p><p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-                    </svg> by <a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
-                    © 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Karan Surf-TG</a>. All Rights Reserved.
-                </p>
-            <p></p>
+            <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                </svg> by<img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/%20github.png" alt="Icon"><a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
+                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
+                Reserved.
+            </p>
         </div>
     </footer>
-
+</body>
 <script>
     window.onload = function () {
         var errorPopup = document.getElementById("errorPopup");
@@ -184,4 +197,4 @@
     };
 </script>
 
-</body></html>
+</html>

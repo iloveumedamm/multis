@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png"
         type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <title><!-- Filename --></title>
+    <title>Surf-TG: <!-- Filename --> </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/css/plyr.css">
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
@@ -155,6 +155,14 @@
             margin-left: 5px;
         }
         
+        .footer img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        
     </style>
 </head>
 
@@ -175,8 +183,8 @@
     </div>
 
     <div class="video-info">
-        <p><span class="material-symbols-outlined">videocam</span> <h style="color: blue;">Name: <span style="color: white;">TG: [@Movie Matin]Spider-Man (2002) 1080p UHD BluR.mkv</span></p>
-        <p><span class="material-symbols-outlined">flash_on</span> <h style="color: blue;">Size: <span style="color: white;"> 3.46GB</span></p>
+        <p><span class="material-symbols-outlined">videocam</span> <h style="color: blue;">Name: <span style="color: white;"><!-- Filename --></span></p>
+        <p><span class="material-symbols-outlined">flash_on</span> <h style="color: blue;">Size: <span style="color: white;"> <!-- Size --></span></p>
     </div>
 
 
@@ -198,8 +206,8 @@
             KMP PLAYER
         </button>
         <button onclick="get_file()" class="btn btn-primary">
-            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/fyelo.png" alt="Icon">
-            Get File In Bot
+            <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tele.png" alt="Icon">
+            Get In Telegram
         </button>
         <button onclick="copyUrl()" class="btn btn-primary">
             <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/copy.png" alt="Icon">
@@ -218,9 +226,10 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg> by <a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
+                </svg> by<img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/%20github.png" alt="Icon"><a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
                 &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
                 Reserved.
+            </p>
         </div>
     </footer>
 
@@ -232,13 +241,13 @@
         const videoId = videoIdWithParams.split('?')[0];
         const idParam = new URLSearchParams(window.location.search).get('id');
         const hashParam = new URLSearchParams(window.location.search).get('hash');
-        const encodedName = encodeURIComponent('TG: [@Movie Matin]Spider-Man (2002) 1080p UHD BluR.mkv');
+        const encodedName = encodeURIComponent('<!-- Filename -->');
 
         const downloadlink = `${domainUrl}/${videoId}/${encodedName}?id=${idParam}&hash=${hashParam}`;
         const downloadlink1 = `${domainUrl}/watch/${videoId}?id=${idParam}&hash=${hashParam}`;
 
         const player = new Plyr('#player', {
-            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'pip', 'airplay', 'settings', "play-large", 'download', 'duration'],
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'pip', 'airplay', 'settings', "play-large", 'duration'],
             hideControls: false,
             keyboard: { focused: true, global: true },
             loop: { active: false },
@@ -279,7 +288,7 @@
             if (match) {
                 const chatId = "-100" + match[1];
                 const messageId = match[2];
-                const openTG = `https://t.me/TGlink99_bot?start=file_${messageId}${chatId}`;
+                const openTG = `https://t.me/<!-- Username -->?start=file_${messageId}${chatId}`;
                 window.location.href = openTG;
             }
         }
