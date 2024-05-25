@@ -27,13 +27,15 @@ async def get_messages(chat_id, first_message_id, last_message_id, batch_size=50
         batch_messages = await gather(*tasks)
         for message in batch_messages:
             if message:
-                if file := message.video or message.document:
+                if file := message.video:
+                    thumbnail = message.video.thumbs[0]
+                    thumb_id = thumbnail.file_id
                     title = file.file_name or message.caption or file.file_id
                     title, _ = splitext(title)
                     title = re.sub(r'[.,|_\',]', ' ', title)
                     messages.append({"msg_id": message.id, "title": title,
                                      "hash": file.file_unique_id[:6], "size": get_readable_file_size(file.file_size),
-                                     "type": file.mime_type, "chat_id": str(chat_id)})
+                                     "type": file.mime_type, "chat_id": str(chat_id), "thumbnail": thumb_id})
         current_message_id += batch_size
     return messages
 
