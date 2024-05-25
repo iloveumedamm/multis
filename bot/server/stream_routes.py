@@ -318,7 +318,7 @@ async def search_route(request):
 async def get_thumbnail(request):
     chat_id = request.match_info['chat_id']
     if message_id := request.query.get('id'):
-        result = await db.files.find_one({"id": ObjectId(id)})
+        result = await db.files.find_one({"msg_id": ObjectId(id)})
         img = result["thumbnail"]
     else:
         img = result["thumbnail"]
