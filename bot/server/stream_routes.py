@@ -1,4 +1,5 @@
 import json
+from starlette.requests import Request
 import logging
 import math
 import os
@@ -248,6 +249,6 @@ async def media_streamer(request: web.Request, chat_id: int, id: int, secure_has
     )
 app = FastAPI()
 @routes.get('/premium')
-def send_premium_html():
+def send_premium_html(request: Request):
     file_path = os.path.abspath(os.path.join('bot', 'erver', 'template', 'premium.html'))
     return FileResponse(file_path, media_type='text/html')
