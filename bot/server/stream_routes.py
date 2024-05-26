@@ -243,3 +243,11 @@ async def media_streamer(request: web.Request, chat_id: int, id: int, secure_has
             "Accept-Ranges": "bytes",
         },
     )
+
+@routes.get('/premium')
+async def premium_route(request):
+    try:
+        return web.FileResponse('path/to/premium.html')
+    except Exception as e:
+        logging.critical(e.with_traceback(None))
+        raise web.HTTPInternalServerError(text=str(e)) from e
