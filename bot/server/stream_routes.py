@@ -2,7 +2,8 @@ import json
 import logging
 import math
 import os
-from fastapi import FastAPI, FileResponse
+from fastapi import FastAPI
+from starlette.responses import FileResponse
 import mimetypes
 import secrets
 from aiohttp import web
