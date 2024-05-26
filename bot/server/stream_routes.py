@@ -249,6 +249,6 @@ async def media_streamer(request: web.Request, chat_id: int, id: int, secure_has
     )
 app = FastAPI()
 @routes.get('/premium')
-def send_premium_html(request: Request):
+def send_premium_html(request):
     file_path = os.path.abspath(os.path.join('bot', 'erver', 'template', 'premium.html'))
-    return FileResponse(file_path, media_type='text/html')
+    return web.Response(file_path, media_type='text/html')
