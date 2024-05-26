@@ -1,6 +1,8 @@
 import json
 import logging
 import math
+import os
+from fastapi import FastAPI, FileResponse
 import mimetypes
 import secrets
 from aiohttp import web
@@ -243,11 +245,8 @@ async def media_streamer(request: web.Request, chat_id: int, id: int, secure_has
             "Accept-Ranges": "bytes",
         },
     )
-
+app = FastAPI()
 @routes.get('/premium')
-async def premium_route(request):
-    try:
-        return web.FileResponse('bot\server\template\premium.html')
-    except Exception as e:
-        logging.critical(e.with_traceback(None))
-        raise web.HTTPInternalServerError(text=str(e)) from e
+def send_premium_html():
+    file_path = os.path.abspath(os.path.join('bot', 'erver', 'template', 'premium.html'))
+    return FileResponse(file_path, media_type='text/html')
