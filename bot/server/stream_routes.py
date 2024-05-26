@@ -251,4 +251,4 @@ app = FastAPI()
 @routes.get('/premium')
 def send_premium_html(request):
     file_path = os.path.abspath(os.path.join('bot', 'erver', 'template', 'premium.html'))
-    return web.Response(file_path, media_type='text/html')
+    return web.Response(file_path)
