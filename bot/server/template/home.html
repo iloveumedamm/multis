@@ -23,6 +23,8 @@
             border-radius: 8px;
             background: rgba(0,0,0,0.6);
             box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+            transform: scale(1);
+            animation: bounce 2s infinite;
         }
         h1 {
             font-size: 2.5em;
@@ -30,6 +32,25 @@
         }
         p {
             font-size: 1.2em;
+        }
+        .button {
+            display: inline-block;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+        .button:hover {
+            background-color: #008CBA;
+            color: white;
         }
         @keyframes gradient {
             0% {background-position: 0% 50%;}
@@ -40,15 +61,18 @@
             from {text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;}
             to {text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6;}
         }
+        @keyframes bounce {
+            0%, 100% {transform: scale(1); opacity: 1;}
+            50% {transform: scale(1.1); opacity: 0.5;}
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Access Denied</h1>
-        <p>Sorry, but you cannot directly access this site. This page is restricted and requires proper authentication. Please contact the site administrator for more information.</p>
+        <p>Sorry, but you cannot directly access this site. This page is restricted and requires proper authentication. Please contact the site administrator for more information. If you believe you have received this message in error, please ensure you are using the correct URL and have the necessary permissions to access this site.</p>
+        <button class="button" onclick="window.location.href='tg://resolve?domain=EpicCinemanearme&post=352'">How To Get Movies</button>
     </div>
-
-    
     <script>
         // You can add JavaScript here for additional functionality
     </script>
