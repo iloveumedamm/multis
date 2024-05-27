@@ -1,279 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png" type="image/x-icon">
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/src/ico2.png"
-        type="image/x-icon">
-    <title>Surf-TG: Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/5/<!-- Theme -->/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/weebzone/weebzone/data/Surf-TG/js/SurfTG.js"></script>
-    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Restricted Access</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.6);
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5em;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        @keyframes glow {
+            from {text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;}
+            to {text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6;}
+        }
+    </style>
 </head>
-<style>
-    a {
-        text-decoration: none;
-    }
-
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #888;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
-
-    html {
-        position: relative;
-        min-height: 90%;
-    }
-
-    body {
-        margin-bottom: 60px;
-        font-family: 'Merriweather', serif;
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 60px;
-    }
-
-    .col {
-        transition: all 0.3s;
-    }
-
-    .col:hover {
-        transform: scale(1.05);
-    }
-
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg');
-        background-size: cover;
-        background-position: center;
-        z-index: -2;
-    }
-
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.638); /* Adjust the opacity as needed */
-        z-index: -1;
-    }
-    
-    nav.navbar {
-        background-color: rgba(0,0,0,0.569);
-        width: 100%;
-        box-shadow: 0 0 15px rgba(148,142,142,0.82); /* Add green shadow */
-        background-image: url('https://raw.githubusercontent.com/tharindu899/addon/main/One%20piece%20.jpg'); /* Replace with your background image path */
-        background-size: cover;
-        background-position: center;
-        color: #ffffff;
-    }
-    
-    footer p {
-        color: #38de0d !important; /* Force footer text and links to be white */
-    }
-    
-    .btn img {
-        width: 25px;
-        height: 25px;
-        vertical-align: middle;
-        margin-right: 1px;
-        margin-left: 1px;
-    }
-    
-    .modal-content{
-        width: 100%;
-        min-width: auto ;
-        margin-left: 10px;
-        margin-right: 10px;
-        box-shadow: 0 0 20px rgba(240, 235, 48, 0.626);
-        background-color: #0f0f0fab; /* Blue background */
-        color: #ffffff; /* White text */
-        border: none;
-        border-radius: 15px;
-        text-align: left;
-        text-decoration: none;
-        border: 1px solid yellow;
-        
-    }
-
-    .footer img {
-        width: 22px;
-        height: 22px;
-        vertical-align: middle;
-        margin-right: 5px;
-        margin-left: 5px;
-    }
-    
-</style>
-
 <body>
-    <div class="admin-only modal fade" id="editConfigModal" aria-labelledby="editConfigModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form action="/config" method="post">
-                        <label for="edit_channel">Auth Channel:</label>
-                        <input type="text" class="form-control" id="edit_channel" name="channel" value=""><br>
-                        <label for="edit_theme">Theme:</label>
-                        <input type="text" class="form-control" id="edit_theme" name="theme" value="<!-- Theme -->"><br>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn" onclick="submitEditConfigForm()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Icon"></button>
-                            <button type="button" class="btn" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Icon"></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="admin-only modal fade" id="createFolderModal" aria-labelledby="createFolderModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form action="/create" method="post">
-                        <label for="folderName" class="form-label">Folder Name</label>
-                        <input type="text" class="form-control" id="folderName" name="folderName"
-                            placeholder="Enter folder name">
-                        <label for="thumbnail" class="form-label">Thumbnail</label>
-                        <input type="text" class="form-control" id="thumbnail" name="thumbnail"
-                            placeholder="Thumbnail url"><br>
-                        <input type="hidden" id="parent_dir" name="parent_dir" readonly>
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Icon"></button>
-                            <button type="submit" class="btn"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Icon"></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <h1>Access Denied</h1>
+        <p>Sorry, but you cannot directly access this site. This page is restricted and requires proper authentication. Please contact the site administrator for more information.</p>
     </div>
 
-    <div class="admin-only modal fade" id="editFolderModal" aria-labelledby="editFolderModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form action="/edit" method="post">
-                        <input type="hidden" id="edit_folder_id" name="folder_id" value="">
-                        <input type="hidden" id="edit_parent" name="parent" value="">
-                        <label for="edit_folderName">Folder Name:</label>
-                        <input type="text" class="form-control" id="edit_folderName" name="folderName" value=""><br>
-                        <label for="edit_thumbnail">Thumbnail:</label>
-                        <input type="text" class="form-control" id="edit_thumbnail" name="thumbnail" value=""><br>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn" onclick="submitEditForm()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/accept.png" alt="Icon"></button>
-                            <button type="button" class="btn" data-bs-dismiss="modal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/cancel.png" alt="Icon"></button>
-                            <button type="button" class="btn" onclick="deleteItem()"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/bin.png" alt="Icon"></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand-lg bg-primary mb-3 p-1" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/tg2.png" alt="Logo"
-                    height="40">
-            </a>
-            <div class="d-flex">
-                <button type="button" class="admin-only btn" data-bs-toggle="modal"
-                    data-bs-target="#editConfigModal"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/edit.png" alt="Icon"></button>
-                <form action="/reload" method="get" role="reload" class="admin-only ">
-                    <button type="submit" class="btn" name="chatId" value="home">
-                        <img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/refresh.png" alt="Icon">
-                    </button>
-                </form>
-                <form id="signoutForm" action="/logout" method="post" class="d-flex" role="logout">
-                    <button type="submit" class="btn"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/logout.png" alt="Icon"></button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <div class="container d-flex align-items-center justify-content-center">
-        <div class="card mx-auto text-center">
-            <div class="card-header btn"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/data.png" alt="Icon">Available Sources</div>
-        </div>
-        <button type="button" class="admin-only btn " data-bs-toggle="modal"
-            data-bs-target="#createFolderModal" onclick="createPopupForm(event)"><img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/create.png" alt="Icon"></button>
-    </div>
-    <div class="container py-2">
-        <!-- Channel grid  -->
-        <div class="hide-channel row row-cols-2 row-cols-md-4 row-cols-lg-6 g-2">
-            <!-- Channel card  -->
-            <!-- Print -->
-        </div>
-        <!-- Folder grid  -->
-        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-2">
-            <!-- Folder card  -->
-            <!-- Playlist -->
-        </div>
-    </div>
-    <footer class="footer mt-auto py-3 text-muted text-center" style="color: white;">
-        <div class="container d-flex justify-content-center align-items-center" style="width: 100%; padding: 0 10px;">
-            <p class="float-end">
-            <p>Made with <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="red"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg> by<img src="https://raw.githubusercontent.com/tharindu899/addon/main/btpng/%20github.png" alt="Icon"><a href="https://github.com/tharindu899" target="_blank">Tharindu Prabath</a><br>
-                &copy; 2024 <a href="https://github.com/weebzone/Surf-TG" target="_blank">Surf-TG karan</a>. All Rights
-                Reserved.
-            </p>
-        </div>
-    </footer>
+    
+    <script>
+        // You can add JavaScript here for additional functionality
+    </script>
 </body>
-<script>
-    function setDefaultChannelValue() {
-        const channelCards = document.querySelectorAll('.channel-card');
-
-        const cids = Array.from(channelCards).map(card => {
-            const link = card.querySelector('a');
-            console.log(link)
-            if (link) {
-                const cid = link.getAttribute('href').split('/').pop();
-                return `-100${cid}`;
-            }
-            return null;
-        }).filter(cid => cid !== null);
-
-        const channelInput = document.getElementById('edit_channel');
-        channelInput.value = cids.join(', ');
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const editConfigModal = document.getElementById('editConfigModal');
-        editConfigModal.addEventListener('show.bs.modal', function () {
-            setDefaultChannelValue();
-        });
-    });
-
-</script>
 </html>
